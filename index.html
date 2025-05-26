@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TRIADX - Transformamos dados em decisões</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #1E88E5;
+            --secondary: #43A047;
+            --dark: #263238;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #1E88E5 0%, #43A047 100%);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .tech-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .tech-icon:hover {
+            transform: scale(1.2);
+        }
+        
+        .project-card {
+            transition: all 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: scale(1.03);
+        }
+        
+        .hamburger {
+            cursor: pointer;
+            width: 24px;
+            height: 24px;
+            transition: all 0.25s;
+            position: relative;
+        }
+        
+        .hamburger-top,
+        .hamburger-middle,
+        .hamburger-bottom {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 24px;
+            height: 2px;
+            background: var(--dark);
+            transform: rotate(0);
+            transition: all 0.5s;
+        }
+        
+        .hamburger-middle {
+            transform: translateY(7px);
+        }
+        
+        .hamburger-bottom {
+            transform: translateY(14px);
+        }
+        
+        .open .hamburger-top {
+            transform: rotate(45deg) translateY(6px) translate(6px);
+        }
+        
+        .open .hamburger-middle {
+            display: none;
+        }
+        
+        .open .hamburger-bottom {
+            transform: rotate(-45deg) translateY(6px) translate(-6px);
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-800">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl mr-2">
+                        TX
+                    </div>
+                    <span class="text-xl font-bold text-gray-800">TRIADX</span>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-800 hover:text-blue-600 transition">Início</a>
+                    <a href="#about" class="text-gray-800 hover:text-blue-600 transition">Sobre</a>
+                    <a href="#services" class="text-gray-800 hover:text-blue-600 transition">Serviços</a>
+                    <a href="#technologies" class="text-gray-800 hover:text-blue-600 transition">Tecnologias</a>
+                    <a href="#portfolio" class="text-gray-800 hover:text-blue-600 transition">Portfólio</a>
+                    <a href="#contact" class="text-gray-800 hover:text-blue-600 transition">Contato</a>
+                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition">Pedir Orçamento</a>
+                </nav>
+                
+                <!-- Mobile menu button -->
+                <div class="md:hidden flex items-center">
+                    <div class="hamburger" id="menu-btn">
+                        <span class="hamburger-top"></span>
+                        <span class="hamburger-middle"></span>
+                        <span class="hamburger-bottom"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden">
+            <div id="menu" class="absolute hidden flex-col items-center self-end py-8 mt-10 space-y-6 font-bold bg-white sm:w-auto sm:self-center left-6 right-6 drop-shadow-md">
+                <a href="#home" class="hover:text-blue-600 transition">Início</a>
+                <a href="#about" class="hover:text-blue-600 transition">Sobre</a>
+                <a href="#services" class="hover:text-blue-600 transition">Serviços</a>
+                <a href="#technologies" class="hover:text-blue-600 transition">Tecnologias</a>
+                <a href="#portfolio" class="hover:text-blue-600 transition">Portfólio</a>
+                <a href="#contact" class="hover:text-blue-600 transition">Contato</a>
+                <a href="#contact" class="bg-blue-600 text-white px-4 py-2 rounded-md transition">Pedir Orçamento</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-32 pb-20 px-6 bg-gradient-to-r from-blue-50 to-green-50">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4"> Inovação, eficiência e tecnologia alinhadas ao crescimento do seu negócio.</h1>
+                <p class="text-xl text-gray-600 mb-8"></p>
+                <p class="text-gray-600 mb-8"> Criamos soluções digitais sob medida para impulsionar resultados e fortalecer sua presença no mercado.</p>
+                <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md text-lg transition inline-block">Pronto para transformar sua ideia em realidade?</a>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative w-full max-w-md">
+                    <div class="absolute -top-6 -left-6 w-64 h-64 bg-blue-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
+                    <div class="absolute -bottom-8 -right-8 w-64 h-64 bg-green-300 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
+                    <div class="relative">
+                        <img src="https://br.fi-group.com/wp-content/uploads/sites/9/2024/05/Inovacao-Definicao-Importancia-e-Beneficios-dos-Incentivos-Fiscais-para-o-Desenvolvimento-Tecnologico--1050x700.jpg" alt="TRIADX Solutions" class="rounded-lg shadow-2xl object-cover w-full h-auto">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 px-6 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Sobre a TRIADX</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Equipe TRIADX" class="rounded-lg shadow-lg w-full h-auto">
+                </div>
+                <div class="md:w-1/2">
+                    <p class="text-lg text-gray-600 mb-6">
+                        Somos uma empresa de soluções tecnológicas com foco em desenvolvimento de sistemas, automações inteligentes, análise de dados e segurança da informação.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Unimos experiência, criatividade e responsabilidade para entregar produtos eficientes, éticos e sob medida para cada cliente.
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 mt-8">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span class="font-medium">Equipe qualificada</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span class="font-medium">Soluções personalizadas</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span class="font-medium">Tecnologia de ponta</span>
+                        </div>
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-3">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <span class="font-medium">Suporte contínuo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 px-6 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nossos Serviços</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Oferecemos soluções completas para impulsionar sua empresa na era digital.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-md service-card transition duration-300">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white text-2xl mb-6">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Desenvolvimento de Sistemas</h3>
+                    <p class="text-gray-600 mb-4">Sistemas web sob medida, sites institucionais e landing pages com integrações completas.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Sistemas web personalizados</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Landing pages eficientes</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Integrações com APIs</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-md service-card transition duration-300">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white text-2xl mb-6">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Análise de Dados</h3>
+                    <p class="text-gray-600 mb-4">Transforme seus dados em insights valiosos para tomada de decisão estratégica.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Dashboards personalizados</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Relatórios interativos (BI)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Análise preditiva</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-md service-card transition duration-300">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white text-2xl mb-6">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Segurança da Informação</h3>
+                    <p class="text-gray-600 mb-4">Proteja seus dados e esteja em conformidade com a LGPD e outras regulamentações.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Análise de riscos</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Conformidade com LGPD</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Proteção de dados</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="bg-white p-8 rounded-lg shadow-md service-card transition duration-300">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white text-2xl mb-6">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Automações</h3>
+                    <p class="text-gray-600 mb-4">Otimize processos e aumente a produtividade com automações inteligentes.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Scripts personalizados</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>RPA (Robotic Process Automation)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Otimização de processos</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="bg-white p-8 rounded-lg shadow-md service-card transition duration-300">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white text-2xl mb-6">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">UI/UX Design</h3>
+                    <p class="text-gray-600 mb-4">Interfaces intuitivas e experiências do usuário que encantam e convertem.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Protótipos e wireframes</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Design centrado no usuário</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Layouts responsivos</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="bg-white p-8 rounded-lg shadow-md service-card transition duration-300">
+                    <div class="w-16 h-16 gradient-bg rounded-full flex items-center justify-center text-white text-2xl mb-6">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Desenvolvimento Mobile</h3>
+                    <p class="text-gray-600 mb-4">Aplicativos nativos e híbridos para Android e iOS com alta performance.</p>
+                    <ul class="space-y-2">
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Aplicativos Android</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Aplicativos iOS</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check text-green-500 mr-2"></i>
+                            <span>Aplicativos híbridos</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="technologies" class="py-20 px-6 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Tecnologias que Utilizamos</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Utilizamos as melhores tecnologias do mercado para entregar soluções de alta qualidade.</p>
+            </div>
+            
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                <!-- Tech 1 -->
+                <div class="flex flex-col items-center p-6 tech-icon">
+                    <i class="fab fa-html5 text-5xl text-orange-500 mb-3"></i>
+                    <span class="font-medium">HTML5</span>
+                </div>
+                
+                <!-- Tech 2 -->
+                <div class="flex flex-col items-center p-6 tech-icon">
+                    <i class="fab fa-css3-alt text-5xl text-blue-500 mb-3"></i>
+                    <span class="font-medium">CSS3</span>
+                </div>
+                
+                <!-- Tech 3 -->
+                <div class="flex flex-col items-center p-6 tech-icon">
+                    <i class="fab fa-js text-5xl text-yellow-400 mb-3"></i>
+                    <span class="font-medium">JavaScript</span>
+                </div>
+                
+                <!-- Tech 4 -->
+                <div class="flex flex-col items-center p-6 tech-icon">
+                    <i class="fab fa-react text-5xl text-blue-400 mb-3"></i>
+                    <span class="font-medium">React</span>
+                </div>
+                
+                <!-- Tech 5 -->
+                <div class="flex flex-col items-center p-6 tech-icon">
+                    <i class="fab fa-node-js text-5xl text-green-500 mb-3"></i>
+                    <span class="font-medium">Node.js</span>
+                </div>
+                
+                <!-- Tech 6 -->
+                <div class="flex flex-col items-center p-6 tech-icon">
+                    <i class="fab fa-python text-5xl text-blue-600 mb-3"></i>
+                    <span class="font-medium">Python</span>
+                </div>
+                
+                <!-- Tech 7 -->
+                <div class="flex flex-col items-center p-6 tech-icon">
+                    <i class="fas fa-database text-5xl text-blue-700 mb-3"></i>
+                    <span class="font-medium">PostgreSQL</span>
+                </div>
+                
+                <!-- Tech 8 -->
+                <div class="flex flex-col items-center p-6 tech-icon">
+                    <i class="fab fa-git-alt text-5xl text-orange-600 mb-3"></i>
+                    <span class="font-medium">Git</span>
+                </div>
+                
+                <!-- Tech 9 -->
+                <div class="flex flex-col items-center p-6 tech-icon">
+                    <i class="fab fa-figma text-5xl text-purple-500 mb-3"></i>
+                    <span class="font-medium">Figma</span>
+                </div>
+                
+                <!-- Tech 10 -->
+                <div class="flex flex-col items-center p-6 tech-icon">
+                    <i class="fas fa-chart-pie text-5xl text-yellow-600 mb-3"></i>
+                    <span class="font-medium">Power BI</span>
+                </div>
+                
+                <!-- Tech 11 -->
+                <div class="flex flex-col items-center p-6 tech-icon">
+                    <i class="fab fa-android text-5xl text-green-500 mb-3"></i>
+                    <span class="font-medium">Android</span>
+                </div>
+                
+                <!-- Tech 12 -->
+                <div class="flex flex-col items-center p-6 tech-icon">
+                    <i class="fab fa-apple text-5xl text-gray-700 mb-3"></i>
+                    <span class="font-medium">iOS</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 px-6 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nosso Portfólio</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">Alguns dos projetos que desenvolvemos para nossos clientes.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg project-card">
+                    <img src="https://liasaude.com.br/wp-content/uploads/2023/03/Painel-DGMP-V2_1.png" alt="Sistema de Gestão" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Dashboards e Paineis</h3>
+                        <p class="text-gray-600 mb-4">Sistema completo para gestão de Dashboards e Paineis.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Web</span>
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Banco de Dados</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Dashboard</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg project-card">
+                    <img src="https://empresas.mercadopago.com.br/hs-fs/hubfs/shutterstock_713446456.jpg?width=670&name=shutterstock_713446456.jpg" alt="E-commerce" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Plataforma E-commerce</h3>
+                        <p class="text-gray-600 mb-4">Loja virtual completa com integração de pagamentos e gestão de estoque.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-blue-100 text-blue-800 text-xs px-3 py-1 rounded-full">Web</span>
+                            <span class="bg-yellow-100 text-yellow-800 text-xs px-3 py-1 rounded-full">E-commerce</span>
+                            <span class="bg-red-100 text-red-800 text-xs px-3 py-1 rounded-full">Pagamentos</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="bg-white rounded-lg overflow-hidden shadow-lg project-card">
+                    <img src="https://static.casapino.com.br/casapino/2019/08/201908/app-saude-f060cde0.jpg" alt="App Saúde" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Aplicativo de Gestão</h3>
+                        <p class="text-gray-600 mb-4">App para agendamento e acompanhamento de consultas.</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="bg-green-100 text-green-800 text-xs px-3 py-1 rounded-full">Mobile</span>
+                            <span class="bg-pink-100 text-pink-800 text-xs px-3 py-1 rounded-full">Saúde</span>
+                            <span class="bg-purple-100 text-purple-800 text-xs px-3 py-1 rounded-full">Agendamento</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contact" class="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition">Quer um projeto como esses?</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+<section id="contact" class="py-20 px-6 bg-white">
+    <div class="container mx-auto">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Entre em Contato</h2>
+            <div class="w-20 h-1 bg-blue-600 mx-auto mb-6"></div>
+            <p class="text-xl text-gray-600 max-w-2xl mx-auto">Tem um projeto em mente? Vamos conversar sobre como podemos ajudar!</p>
+        </div>
+        
+        <div class="flex flex-col md:flex-row gap-12">
+            <div class="md:w-1/2">
+                <form id="contact-form" class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-gray-700 font-medium mb-2">Seu Nome</label>
+                        <input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Digite seu nome">
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-gray-700 font-medium mb-2">Seu E-mail</label>
+                        <input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Digite seu e-mail">
+                    </div>
+                    
+                    <div>
+                        <label for="service" class="block text-gray-700 font-medium mb-2">Serviço de Interesse</label>
+                        <select id="service" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="">Selecione um serviço</option>
+                            <option value="Desenvolvimento de Sistemas">Desenvolvimento de Sistemas</option>
+                            <option value="Análise de Dados">Análise de Dados</option>
+                            <option value="Segurança da Informação">Segurança da Informação</option>
+                            <option value="Automações">Automações</option>
+                            <option value="UI/UX Design">UI/UX Design</option>
+                            <option value="Desenvolvimento Mobile">Desenvolvimento Mobile</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-gray-700 font-medium mb-2">Mensagem</label>
+                        <textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Descreva seu projeto"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-md transition font-medium">Pedir Orçamento Agora</button>
+                </form>
+            </div>
+            
+            <div class="md:w-1/2">
+                <div class="bg-gray-50 p-8 rounded-lg h-full">
+                    <h3 class="text-xl font-bold text-gray-800 mb-6">Informações de Contato</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-4">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Telefone</h4>
+                                <p class="text-gray-600">(79) 99670-1863</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-4">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">E-mail Principal</h4>
+                                <p class="text-gray-600">augustodev00@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-4">
+                                <i class="fab fa-instagram"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Instagram</h4>
+                                <p class="text-gray-600">@triadx.tech</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-4">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-medium text-gray-800">LinkedIn Principal</h4>
+                                <p class="text-gray-600">linkedin.com/in/josé-augusto-a21002238/</p>
+                            </div>
+                        </div>
+                        
+                        <div class="pt-6">
+                            <h4 class="font-medium text-gray-800 mb-3">Horário de Atendimento</h4>
+                            <p class="text-gray-600">Segunda a Sexta: 08:00 - 18:00</p>
+                            <p class="text-gray-600">Sábado: 09:00 - 12:00</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const nome = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const servico = document.getElementById('service').value.trim();
+    const mensagem = document.getElementById('message').value.trim();
+
+    const texto = `Olá! Gostaria de um orçamento.%0A%0A` +
+                  `*Nome:* ${nome}%0A` +
+                  `*E-mail:* ${email}%0A` +
+                  `*Serviço de Interesse:* ${servico}%0A` +
+                  `*Mensagem:* ${mensagem}`;
+
+    const numeroWhatsApp = '5579996701863'; // coloque aqui seu número com DDI + DDD
+
+    const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(texto)}`;
+
+    window.open(url, '_blank');
+});
+</script>
+
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-6">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full gradient-bg flex items-center justify-center text-white font-bold text-xl mr-2">
+                            TX
+                        </div>
+                        <span class="text-xl font-bold">TRIADX</span>
+                    </div>
+                    <p class="text-gray-400 mb-4">Inovação, eficiência e tecnologia alinhadas ao crescimento do seu negócio.</p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Links Rápidos</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition">Início</a></li>
+                        <li><a href="#about" class="text-gray-400 hover:text-white transition">Sobre</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Serviços</a></li>
+                        <li><a href="#portfolio" class="text-gray-400 hover:text-white transition">Portfólio</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-lg font-bold mb-4">Serviços</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Desenvolvimento</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Análise de Dados</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Segurança</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Automações</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">UI/UX Design</a></li>
+                    </ul>
+                </div>
+                
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>TRIADX © Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const menu = document.getElementById('menu');
+        
+        menuBtn.addEventListener('click', () => {
+            menuBtn.classList.toggle('open');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+        });
+        
+        // Close menu when clicking on a link
+        const menuLinks = document.querySelectorAll('#menu a');
+        menuLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.classList.remove('open');
+                menu.classList.add('hidden');
+                menu.classList.remove('flex');
+            });
+        });
+        
+        // Smooth scrolling for all links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Form submission (example)
+        const form = document.querySelector('form');
+        if(form) {
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Obrigado pelo seu contato! Entraremos em breve em contato.');
+                form.reset();
+            });
+        }
+    </script>
+</body>
+</html>
